@@ -1,9 +1,7 @@
 package entidad;
 
 public class Carta {
-	public enum PALO {OROS, COPAS, ESPADAS, BASTOS
-		
-	};
+	public enum PALO {OROS, COPAS, ESPADAS, BASTOS};
 	public PALO palos;
 	private int numero; 
 	private static String[] figura = {"As","2","3","4","5","6","7","Sota","Caballo","Rey"};
@@ -27,10 +25,7 @@ public class Carta {
 	}
 
 	private void setNumero(int numero) {
-		if(numero>0 && numero<11)
-			this.numero = numero;
-		else
-			System.out.println("Escriba un número entre 1 y 10.");
+		this.numero = numero; 
 	} 
 	
 	private int getPuntuacion(){
