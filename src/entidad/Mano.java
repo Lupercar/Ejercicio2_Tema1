@@ -1,8 +1,5 @@
 package entidad;
 
-import java.util.Arrays;
-
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 public class Mano {
 
