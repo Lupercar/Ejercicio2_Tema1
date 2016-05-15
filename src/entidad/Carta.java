@@ -4,8 +4,8 @@ public class Carta {
 	public enum PALO {OROS, COPAS, ESPADAS, BASTOS};
 	public PALO palos;
 	private int numero; 
-	private static String[] figura = {"As","2","3","4","5","6","7","Sota","Caballo","Rey"};
-	private static int[] puntuacion = {11,2,3,4,5,6,7,10,10,10};
+	private final static String[] figura = {"As","2","3","4","5","6","7","Sota","Caballo","Rey"}; //haciendo lo final no se puede cambiar desde fuera
+	private final static int[] puntuacion = {11,2,3,4,5,6,7,10,10,10};
 	
 	public Carta(PALO palos, int numero) {
 		setPalos(palos);
@@ -16,7 +16,7 @@ public class Carta {
 		return palos;
 	}
 
-	private void setPalos(PALO palos) {
+	public void setPalos(PALO palos) {
 		this.palos = palos;
 	}
 
@@ -28,18 +28,20 @@ public class Carta {
 		this.numero = numero; 
 	} 
 	
-	private int getPuntuacion(){
-			return puntuacion[numero-1];  
+//	Valor calculado respecto al número
+	public int getPuntuacion(){
+		return puntuacion[numero-1];  
 	}
 	
-	private String getFigura() {
+//	muestra figura respeto al número
+	public String getFigura() {
 		return figura[numero-1];
 	}
 	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return getFigura()+ " de " + getPalos().toString().toLowerCase();
+		return getFigura()+ " de " + getPalos().toString().toLowerCase()+", ";
 	}
 
 	
